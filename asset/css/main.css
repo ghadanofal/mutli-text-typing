@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(114, 146, 250);
+  }
+  
+.static-text {
+    color: #fff;
+    font-size: 60px;
+  }
+  .dynamic-texts {
+    margin-left: 15px;
+    height: 70px;
+    line-height: 70px;
+    overflow: hidden;
+  }
+  .dynamic-texts li {
+    color: pink;
+    list-style: none;
+    font-size: 60px;
+    position: relative;
+    top: 0;
+    animation: slide 6s steps(4) infinite;
+  }
+  @keyframes slide {
+    100% {
+      top: -280px;
+    }
+  }
+  .dynamic-texts li span {
+    position: relative;
+  }
+  .dynamic-texts li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(114, 146, 250);
+    border-left: 2px solid pink;
+    animation: typing 1.6s steps(10) infinite;
+  }
+  @keyframes typing {
+    100% {
+      left: 100%;
+      margin: 0 -35px 0 35px;
+    }
+  }
